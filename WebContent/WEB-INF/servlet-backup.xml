@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- If we don't want to use GlobalExceptionHandlerMethods to simplify the action performed in same -->
+
+<bean id="simpleMappingExceptionResolver"
+	class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	<property name="exceptionMappings">
+		<map>
+			<entry key="NullPointerException" value="NullPointerException" />
+			<entry key="IOException" value="IOException" />
+		</map>
+	</property>
+
+	<!-- This is default error webpage or the generic error webpage -->
+	<property name="defaultErrorView" value="Exception" />
+
+<!-- Name of longer to use to log exceptions. Unset by default, so logging 
+	disabled -->
+	<property name="warnLogCategory" value="MVCLogger" />
+</bean>
